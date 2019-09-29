@@ -3,9 +3,11 @@ import thunkMiddleware from "redux-thunk";
 
 
 import { todoReducer } from "./todos/reducers";
+import { visibilityFilter } from './filters/reducers'
 
 const rootReducer = combineReducers({
-  todoState: todoReducer
+  todoState: todoReducer,
+  visibility: visibilityFilter
 });
 
 export type AppState = ReturnType<typeof rootReducer>;

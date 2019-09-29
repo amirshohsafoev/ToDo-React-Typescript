@@ -2,7 +2,10 @@ import {
     Todo,
     ADD_TODO,
     DELETE_TODO,
-    EDIT_TODO
+    EDIT_TODO,
+    COMPLETE_TODO,
+    CLEAR_COMPLETED,
+    FILTER_TODOS
 }
 from './types'
 
@@ -22,9 +25,41 @@ export function addTodo(newTodo: Todo) {
     };
   }
   
-  export function editTodo(editedTodo: Todo) {
+  export function editTodo(id: number, text: string) {
     return {
       type: EDIT_TODO,
-      payload: editedTodo
+      // payload: editedTodo
+      meta: {
+        id,
+        text
+      }
     };
   }
+
+  export function completeTodo(id: number) {
+    return {
+      type: COMPLETE_TODO,
+      meta: {
+        id
+      }
+    }
+  }
+
+  export function clearCompleted () {
+    return {
+      type: CLEAR_COMPLETED,
+      // meta: {
+      //   completed
+      // }
+    }
+  }
+
+  export function handleFilterTodos(completed: boolean) {
+    return {
+      type: FILTER_TODOS,
+      meta: {
+        completed
+      }
+    };
+  }
+  
