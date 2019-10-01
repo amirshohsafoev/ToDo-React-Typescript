@@ -18,14 +18,19 @@ const initialState: TodoState = {
         id: 0
       },
       {
-        text: 'Finish the project',
+        text: 'Learn TypeScripts',
         completed: true,
         id: 1
       },
       {
-        text: 'Send email to Avary',
+        text: 'Do bungee jumping',
         completed: true,
         id: 2
+      },
+      {
+        text: 'Jump with a chute from an airplane',
+        completed: false,
+        id: 3
       }
     ],
     filteredTodos: [],

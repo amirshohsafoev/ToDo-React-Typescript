@@ -20,11 +20,12 @@ interface TodoCardProps {
        }
 
      handleDblClick = () => {
-         if(this.props.edit === true){
-             this.setState({
-                 editing: true
-             })
-         }
+         console.log('Double Click for editing');
+        //  if(this.props.edit === true){
+        //      this.setState({
+        //          editing: true
+        //      })
+        //  }
      }
 
      handleComplete = (id: number) => {
@@ -40,7 +41,7 @@ interface TodoCardProps {
          let element     
          if(this.state.editing){
              element = <TodoTextInput 
-                        text={todo.text}
+                        placeholder={todo.text}
                         editing={this.state.editing}
                         />
          } else {
